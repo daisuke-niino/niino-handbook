@@ -1,47 +1,33 @@
 ---
+id: intro
+slug: /intro
+title: Niino Dev Handbookとは？
+description: Niino Dev Handbook とは何か説明します。
+sidebar_label: Niino Dev Handbookとは？
 sidebar_position: 1
+tags:
+  - NiinoDevHandbook
+  - Docusaurus
+keywords:
+  - NiinoDevHandbook
+  - Docusaurus
 ---
 
-# Tutorial Intro
+## 概要
+Niino Dev Handbookとは、私NiinoがAIやシステム開発で得た知見・経験を蓄積しておくページです。
+私自身の備忘録としての役割や、外部への情報発信を目的としています。
 
-Let's discover **Docusaurus in less than 5 minutes**.
+多くのエンジニアは、インターネット上の情報サイトやOSSの力を借りて開発をしていると考えていて、私もその一人です。
+お返しになるかわかりませんが、このサイトを通じて世の中のエンジニアに少しでも貢献できればと考えています。
 
-## Getting Started
 
-Get started by **creating a new site**.
+## 内容
+Niino Dev Handbookの構成は以下の通りです。
+- Docs
+  - AIやシステム開発で得られた知見を蓄積していきます。
+- Blog(これから作る予定)
+  - エンジニアとしての経験や考えたことなどをまとめていきたいと考えています。
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
-
-### What you'll need
-
-- [Node.js](https://nodejs.org/en/download/) version 16.14 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
-
-## Generate a new site
-
-Generate a new Docusaurus site using the **classic template**.
-
-The classic template will automatically be added to your project after you run the command:
-
-```bash
-npm init docusaurus@latest my-website classic
-```
-
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
-
-The command also installs all necessary dependencies you need to run Docusaurus.
-
-## Start your site
-
-Run the development server:
-
-```bash
-cd my-website
-npm run start
-```
-
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
-
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
-
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
+## 謝辞
+このページは、Meta社の[Docusaurus](https://docusaurus.io/)を活用して作成しています。
+開発コミュニティに対し、この場にて謝意を表明いたします。
