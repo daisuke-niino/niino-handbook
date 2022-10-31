@@ -9,7 +9,7 @@ const config = {
   title: 'Niino Dev Handbook',
   tagline: 'NiinoによるAIシステム開発の備忘録です。',
   url: 'https://daisuke-niino.github.io',
-  baseUrl: '/niino-handbook/',
+  baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon_seaturtle.ico',
