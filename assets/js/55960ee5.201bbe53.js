@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[121],{8070:e=>{e.exports=JSON.parse('[{"label":"NiinoDevHandbook","permalink":"/docs/tags/niino-dev-handbook","count":1},{"label":"Docusaurus","permalink":"/docs/tags/docusaurus","count":1}]')}}]);
