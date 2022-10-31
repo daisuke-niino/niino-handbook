@@ -66,6 +66,7 @@ const config = {
           {
             type: 'doc',
             docId: 'intro',
+            // href: 'docs/intro',
             position: 'left',
             label: 'Docs',
           },
@@ -87,7 +88,7 @@ const config = {
             items: [
               {
                 label: 'Docs',
-                to: '/docs/intro.md',
+                to: '/docs/intro',
               },
             ],
           },
