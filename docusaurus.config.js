@@ -8,7 +8,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'Niino Dev Handbook',
   tagline: 'NiinoによるAIシステム開発の備忘録です。',
-  url: 'https://daisuke-niino.github.io',
+  // url: 'https://daisuke-niino.github.io',
+  url: 'https://niino.tech',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
