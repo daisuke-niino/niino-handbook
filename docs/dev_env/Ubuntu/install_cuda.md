@@ -109,6 +109,7 @@ CUDAのインストール方法を説明します。
     ```
 
 2. CUDA公式サイトのコマンドを参考にインストールする。
+    
     [公式サイト](https://developer.nvidia.com/cuda-11-7-0-download-archive)から選択肢を選んでいくと、以下のように
     インストールコマンドが表示されるので、これを参考にインストールします。
     ![CUDA公式サイト](/img/docs/dev_env/ubuntu/install_cuda/cuda_hp.png)
@@ -129,6 +130,7 @@ CUDAのインストール方法を説明します。
     ```
 
 3. パスを追加する
+    
     ```~/.bashrc``` に以下を追加して、bash起動時にCUDAのパスが通るようにしましょう。
 
     以下のコマンドでvimから```~/.bashrc```を開いて
@@ -143,6 +145,7 @@ CUDAのインストール方法を説明します。
     ```
 
 4. 動作確認
+    
     ターミナルに入り直して以下のコマンドを実行する。
     ```bash
     nvcc -V
@@ -166,10 +169,12 @@ CUDAのインストール方法を説明します。
     ```
 
 2. cuDNNをダウンロードする
+    
     [公式サイト](https://developer.nvidia.com/rdp/cudnn-download)を確認して環境に合ったファイルをダウンロードしましょう。
     私は```cuDNNv8.6.0```をダウンロードしました。
 
 3. インストールする
+    
     ダウンロードしたファイルがあるディレクトリに移動して、以下のコマンドでcuDNNをインストールします。
     ```bash
     sudo dpkg -i cudnn-local-repo-ubuntu2204-8.6.0.163_1.0-1_amd64.deb
@@ -191,12 +196,14 @@ CUDAのインストール方法を説明します。
     ```
 
 3. PyTorchをインストール
+    
     [公式サイト](https://pytorch.org/get-started/locally/)のコマンドを参考にインストールします。
     ```bash
     pip3 install torch torchvision torchaudio
     ```
 
 4. 動作確認
+    
     pythonのインタープリタを起動して以下を入力してみましょう
     ```bash
     $ python3
