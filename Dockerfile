@@ -29,6 +29,9 @@ RUN n ls-remote
 RUN apt -y purge nodejs npm
 RUN apt -y autoremove
 
+# git をインストール
+RUN apt install -y git
+
 # # 再ログイン
 # RUN exec $SHELL -l 
 
