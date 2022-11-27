@@ -21,9 +21,9 @@ Dockerのインストール方法を説明します。
 
 ### 環境
 この記事では以下の環境を想定します。
-OS: Ubuntu22.04.1LTS
+- OS: Ubuntu22.04.1LTS
 
-### インストール方法
+### Dockerのインストール
 
 1. 古いバージョンのDockerが入っている場合は削除する。
     ```bash
@@ -74,7 +74,7 @@ hello world コンテナを動かして正常にセットアップできたか�
 docker run hello-world
 ```
 
-以下のようなに```Hello from Docker!```が表示されればOKです。
+以下のように```Hello from Docker!```が表示されればOKです。
 ```bash
 $ docker run hello-world
 Unable to find image 'hello-world:latest' locally
@@ -104,3 +104,59 @@ Share images, automate workflows, and more with a free Docker ID:
 For more examples and ideas, visit:
  https://docs.docker.com/get-started/
 ```
+
+### [option] DockerでGPUを使う場合
+DockerでGPUを使用するには、別途セットアップが必要です。
+ここではその方法を説明します。
+
+1. NVIDIAドライバをインストールする
+   
+   インストール方法は[こちら](/docs/dev_env/ubuntu/install_cuda#nvidiaドライバをインストールする)を参照。
+
+2. 再起動する。
+
+3. nvidia-continer-toolkit をインストールする
+    ```bash
+    distribution=$(. /etc/os-release;echo $ID$VERSION_ID) \
+    && curl -fsSL https://nvidia.github.io/libnvidia-container/gpgkey | \
+        sudo gpg --dearmor -o /usr/share/keyrings/nvidia-container-toolkit-keyring.gpg \
+    && curl -s -L https://nvidia.github.io/libnvidia-container/$distribution/libnvidia-container.list | \
+        sed 's#deb https://#deb [signed-by=/usr/share/keyrings/nvidia-container-toolkit-keyring.gpg] https://#g' | \
+        sudo tee /etc/apt/sources.list.d/nvidia-container-toolkit.list
+    ```
+
+    ```bash
+    sudo apt update
+    sudo apt install -y nvidia-container-toolkit
+    ```
+
+4. 再起動する。
+
+5. GPUが認識しているか確認する。
+   ```bash
+   docker run --rm --gpus all nvidia/cuda:11.7.0-base-ubuntu22.04 nvidia-smi
+   ```
+
+   以下のようにGPUのステータスが表示されればOK。
+   ```bash
+   Thu Nov 24 03:11:00 2022
+    +-----------------------------------------------------------------------------+
+    | NVIDIA-SMI 525.60.02    Driver Version: 526.98       CUDA Version: 12.0     |
+    |-------------------------------+----------------------+----------------------+
+    | GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+    | Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+    |                               |                      |               MIG M. |
+    |===============================+======================+======================|
+    |   0  NVIDIA GeForce ...  On   | 00000000:01:00.0  On |                  N/A |
+    | 29%   33C    P8     7W / 120W |    852MiB /  6144MiB |      2%      Default |
+    |                               |                      |                  N/A |
+    +-------------------------------+----------------------+----------------------+
+
+    +-----------------------------------------------------------------------------+
+    | Processes:                                                                  |
+    |  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
+    |        ID   ID                                                   Usage      |
+    |=============================================================================|
+    |  No running processes found                                                 |
+    +-----------------------------------------------------------------------------+
+    ```
